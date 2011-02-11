@@ -165,7 +165,7 @@ class site{
 				$duration = $duration[0];
 			}
 			# make slice
-			$fps = 1;
+			$fps = 4;
 		
 			$avs = $tools->avs($file);
 			$cmd = 'tools\x264 --fps '.$fps.' --frames '.($fps*10).' --keyint '.($fps*10).' --qp 20 --8x8dct --me umh --threads auto --output "'.$file->id.'.h264" "'.$avs.'"';
@@ -401,7 +401,7 @@ class tools{
 		// prd($file);
 		
 		# avs
-		$fps = 1;
+		$fps = 4;
 		$avs = 'ImageSource("'.$file->link.'", end='.($fps*15*60).', fps='.$fps.').LanczosResize('.intval($file->track[1]->Width[0]).','.intval($file->track[1]->Height[0]).').ConvertToYV12()';
 		
 		# write
